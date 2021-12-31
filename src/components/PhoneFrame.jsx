@@ -11,7 +11,7 @@ const PhoneFrame = ({ children, pro }) => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute top-0 inset-x-0">
-          <div className={`${notchSize} relative h-6 mx-auto bg-black rounded-b-3xl z-10`}></div>
+          <div className={`${notchSize} relative h-6 mx-auto bg-black rounded-b-3xl z-50`}></div>
         </div>
       {children}
     </div>
