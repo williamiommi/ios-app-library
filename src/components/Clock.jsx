@@ -8,7 +8,7 @@ const getTime = () => {
   return `${h}:${m}`;
 };
 
-const Clock = ({ clockSize }) => {
+const Clock = () => {
   const [time, setTime] = useState();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Clock = ({ clockSize }) => {
 
   return (
     <div
-      className={`${clockSize} relative flex items-center justify-end w-full text-white text-sm`}
+      className={`relative flex items-center w-[30%] justify-center pl-[20px] text-white text-sm`}
     >
       {time}
     </div>
