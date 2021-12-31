@@ -1,8 +1,8 @@
-const Icon = ({ src, text, wrapperClass, imgClass, textClass }) => {
+const Icon = ({ src, text, showText, wrapperClass, imgClass, textClass }) => {
   return (
     <div className={`text-center ${wrapperClass}`}>
       <img src={src} alt={text} className={`${imgClass}`} />
-      {text && (
+      {showText && (
         <p className={`text-white font-sans text-sm -mt-1 ${textClass}`}>
           {text}
         </p>
