@@ -1,4 +1,7 @@
 const Battery = ({ className }) => {
+  const lowBattery = Math.floor(Math.random() * 2);
+  const size = lowBattery ? 5 : 12;
+  const color = lowBattery ? 'fill-red-500' : 'fill-white';
   return (
     <svg
       className={`h-5 w-5 fill-transparent ${className}`}
@@ -10,7 +13,7 @@ const Battery = ({ className }) => {
         stroke="2"
       />
       <path d="M29,17h-1v-5h1c0.552,0,1,0.448,1,1v3C30,16.552,29.552,17,29,17z" className="stroke-gray-400 fill-gray-400" />
-      <rect height="7" width="12" x="5" y="11" className="stroke-white fill-white" />
+      <rect height="7" width={size} x="5" y="11" className={color} />
     </svg>
   );
 };
