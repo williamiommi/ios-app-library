@@ -15,7 +15,7 @@ const Clock = ({ clockSize }) => {
     setTime(getTime());
     const timer = setInterval(() => {
       setTime(getTime());
-    }, 1000 * 60);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
