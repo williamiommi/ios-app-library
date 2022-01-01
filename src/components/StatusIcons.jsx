@@ -1,8 +1,9 @@
+import { memo } from "react";
 import Signal from "./icons/Signal";
 import Wifi from "./icons/Wifi";
 import Battery from "./icons/Battery";
 
-const Notch = ({ pro }) => {
+const StatusIcons = ({ pro }) => {
   const statusSize = pro ? 'space-x-3' : 'space-x-1';
   return (
     <div
@@ -15,4 +16,4 @@ const Notch = ({ pro }) => {
   );
 };
 
-export default Notch;
+export default memo(StatusIcons);

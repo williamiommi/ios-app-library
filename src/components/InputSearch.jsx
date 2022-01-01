@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Lens from "./icons/Lens";
 
 const InputSearch = () => {
@@ -17,4 +18,4 @@ const InputSearch = () => {
   );
 };
 
-export default InputSearch;
+export default memo(InputSearch);

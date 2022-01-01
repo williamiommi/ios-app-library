@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Wifi = ({ className }) => {
   return (
     <svg
@@ -14,4 +16,4 @@ const Wifi = ({ className }) => {
   );
 };
 
-export default Wifi;
+export default memo(Wifi);

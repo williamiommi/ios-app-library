@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const getTime = () => {
   var date = new Date();
@@ -29,4 +29,4 @@ const Clock = () => {
   );
 };
 
-export default Clock;
+export default memo(Clock);

@@ -9,7 +9,7 @@ function App() {
   const [pro, setPro] = useState(false);
   return (
     <>
-      <div className="grid min-h-screen place-items-center">
+      <div className="grid gap-10 place-items-center">
         <button onClick={() => setPro(!pro)}>pro</button>
         <PhoneFrame pro={pro}>
           <TopBar pro={pro} />

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Signal = ({ className }) => {
   return (
     <>
@@ -28,4 +30,4 @@ const Signal = ({ className }) => {
   );
 };
 
-export default Signal;
+export default memo(Signal);

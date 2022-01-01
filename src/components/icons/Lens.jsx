@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Lens = () => {
   return (
     <svg
@@ -17,4 +19,4 @@ const Lens = () => {
   );
 };
 
-export default Lens;
+export default memo(Lens);

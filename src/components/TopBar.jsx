@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Clock from "./Clock";
 import StatusIcons from "./StatusIcons";
 
@@ -11,4 +12,4 @@ const TopBar = ({ pro }) => {
   );
 };
 
-export default TopBar;
+export default memo(TopBar);

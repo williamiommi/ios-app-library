@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Battery = ({ className }) => {
   const lowBattery = Math.floor(Math.random() * 2);
   const size = lowBattery ? 5 : 12;
@@ -18,4 +20,4 @@ const Battery = ({ className }) => {
   );
 };
 
-export default Battery;
+export default memo(Battery);

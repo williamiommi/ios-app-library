@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const PhoneFrame = ({ children, pro }) => {
   const frameSize = pro ? "h-[926px] w-[428px]" : "h-[712px] w-[350px]";
   return (
@@ -14,4 +16,4 @@ const PhoneFrame = ({ children, pro }) => {
   );
 };
 
-export default PhoneFrame;
+export default memo(PhoneFrame);

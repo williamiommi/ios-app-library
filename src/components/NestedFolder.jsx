@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 const NestedFolder = ({ icons }) => {
   let filtered = icons.filter((_, index) => index >= 3 && index < 3 + 4);
@@ -14,4 +14,4 @@ const NestedFolder = ({ icons }) => {
   );
 }
 
-export default NestedFolder;
+export default memo(NestedFolder);

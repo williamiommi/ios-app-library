@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Icon from "./Icon";
 import NestedFolder from "./NestedFolder";
 
@@ -27,4 +28,4 @@ const Folder = ({ icons, text }) => {
   );
 };
 
-export default Folder;
+export default memo(Folder);

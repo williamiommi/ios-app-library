@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Icon = ({ src, text, showText, wrapperClass, imgClass, textClass }) => {
   return (
     <div className={`text-center ${wrapperClass}`}>
@@ -11,4 +13,4 @@ const Icon = ({ src, text, showText, wrapperClass, imgClass, textClass }) => {
   );
 };
 
-export default Icon;
+export default memo(Icon);
