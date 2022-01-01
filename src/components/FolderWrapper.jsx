@@ -1,15 +1,17 @@
 import mock from "../mock";
 import Folder from "./Folder";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 function FolderWrapper() {
   return (
-    <div className="relative px-5">
+    <SimpleBar className="!absolute top-0 p-5 pt-24 w-full max-h-full">
       <div className="grid grid-cols-2 gap-5">
         {mock.map((folder) => (
           <Folder key={folder.name} icons={folder.icons} text={folder.name} />
         ))}
       </div>
-    </div>
+    </SimpleBar>
   );
 }
 
