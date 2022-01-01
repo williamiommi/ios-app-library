@@ -1,7 +1,7 @@
 import Clock from "./Clock";
 import StatusIcons from "./StatusIcons";
 
-const Notch = ({ pro }) => {
+const TopBar = ({ pro }) => {
   return (
     <div className="absolute top-0 inset-x-0 z-50 flex flex-row justify-between items-center w-">
       <Clock />
@@ -11,4 +11,4 @@ const Notch = ({ pro }) => {
   );
 };
 
-export default Notch;
+export default TopBar;
