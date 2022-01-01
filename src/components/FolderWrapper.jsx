@@ -1,6 +1,5 @@
 import { memo } from "react";
 import SimpleBar from "simplebar-react";
-import "simplebar/dist/simplebar.min.css";
 import mock from "../mock";
 import Folder from "./Folder";
 
