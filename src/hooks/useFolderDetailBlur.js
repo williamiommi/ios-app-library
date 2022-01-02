@@ -15,8 +15,8 @@ const useFolderDetailBlur = () => {
       },
       {
         threshold: [1],
-        rootMargin: "-140px",
-      } /* blurredRed h + titleRef top*/
+        rootMargin: "-130px",
+      }
     );
     observer.observe(titleRef.current);
     return () => observer.disconnect();
