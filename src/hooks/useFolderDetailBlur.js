@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 
-const useFolderDetailBlur = () => {
+const useFolderDetailBlur = (folder) => {
   const blurredRef = useRef();
   useEffect(() => {
-    if (!blurredRef.current) return null;
+    if (!folder) return null;
 
     const observer = new IntersectionObserver(
       ([e]) => {
@@ -19,7 +19,7 @@ const useFolderDetailBlur = () => {
     );
     observer.observe(blurredRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [folder]);
   return { blurredRef };
 };
 

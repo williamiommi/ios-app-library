@@ -16,7 +16,7 @@ const FolderDetail = () => {
   const folderRef = useRef();
   const { folderOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
-  const { blurredRef } = useFolderDetailBlur();
+  const { blurredRef } = useFolderDetailBlur(folderOpen);
   const controls = useAnimation();
   const [centerPoint, setCenterPoint] = useState();
 
