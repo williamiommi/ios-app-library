@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 
 const NestedFolder = ({ name, icons, openFolderCB }) => {
   let filtered = icons.filter((_, index) => index >= 3 && index < 3 + 4);

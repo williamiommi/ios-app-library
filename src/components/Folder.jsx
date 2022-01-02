@@ -22,7 +22,7 @@ const Folder = ({ icons, name, openFolderCB }) => {
           />
         ))}
         {isNested && (
-          <NestedFolder text={name} icons={icons} openFolderCB={openFolderCB} />
+          <NestedFolder name={name} icons={icons} openFolderCB={openFolderCB} />
         )}
       </div>
       <p className="font-sans text-center text-white text-sm">{name}</p>
