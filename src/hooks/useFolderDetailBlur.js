@@ -1,27 +1,26 @@
 import { useEffect, useRef } from "react";
 
-const useFolderDetailBlur = () => {
+const useFolderDetailBlur = (folder) => {
   const blurredRef = useRef();
-  const titleRef = useRef();
   useEffect(() => {
-    if (!titleRef.current) return null;
+    if (!folder) return null;
 
     const observer = new IntersectionObserver(
       ([e]) => {
+        console.log(e);
         blurredRef.current.classList.toggle(
-          "backdrop-blur-md",
+          "!visible",
           e.intersectionRatio < 1
         );
       },
       {
         threshold: [1],
-        rootMargin: "-130px",
       }
     );
-    observer.observe(titleRef.current);
+    observer.observe(blurredRef.current);
     return () => observer.disconnect();
-  }, []);
-  return { blurredRef, titleRef };
+  }, [folder]);
+  return { blurredRef };
 };
 
 export default useFolderDetailBlur;
