@@ -1,173 +1,114 @@
 const mock = [
   {
-    name: "Recently Added",
-    icons: [
-      {
-        src: "/icons/Icon.png",
-        name: "Icon 00",
-      },
-      {
-        src: "/icons/Icon-1.png",
-        name: "Icon 01",
-      },
-      {
-        src: "/icons/Icon-2.png",
-        name: "Icon 02",
-      },
-    ],
-  },
-  {
     name: "Games",
     icons: [
-      {
-        src: "/icons/Icon-3.png",
-        name: "Icon 03",
-      },
-      {
-        src: "/icons/Icon-4.png",
-        name: "Icon 04",
-      },
-      {
-        src: "/icons/Icon-5.png",
-        name: "Icon 05",
-      },
-      {
-        src: "/icons/Icon-6.png",
-        name: "Icon 06",
-      },
-    ],
-  },
-  {
-    name: "Socials",
-    icons: [
-      {
-        src: "/icons/Icon-7.png",
-        name: "Icon 07",
-      },
-      {
-        src: "/icons/Icon-8.png",
-        name: "Icon 08",
-      },
-      {
-        src: "/icons/Icon-9.png",
-        name: "Icon 09",
-      },
-      {
-        src: "/icons/Icon-10.png",
-        name: "Icon 10",
-      },
-      {
-        src: "/icons/Icon-11.png",
-        name: "Icon 11",
-      },
+      { src: "/icons/Games/calculator.png", name: "Calculator" },
+      { src: "/icons/Games/compass.png", name: "Compass" },
+      { src: "/icons/Games/settings.png", name: "Settings" },
     ],
   },
   {
     name: "Creativity",
     icons: [
-      {
-        src: "/icons/Icon-12.png",
-        name: "Numbers",
-      },
-      {
-        src: "/icons/Icon-13.png",
-        name: "Camera",
-      },
-      {
-        src: "/icons/Icon-14.png",
-        name: "TV",
-      },
-      {
-        src: "/icons/Icon-15.png",
-        name: "FaceTime",
-      },
-      {
-        src: "/icons/Icon-43.png",
-        name: "Home",
-      },
-      {
-        src: "/icons/Icon-17.png",
-        name: "Measure",
-      },
-      {
-        src: "/icons/Icon-18.png",
-        name: "Safari",
-      },
-      {
-        src: "/icons/Icon-20.png",
-        name: "Calculator",
-      },
-      {
-        src: "/icons/Icon-44.png",
-        name: "Reminders",
-      },
+      { src: "/icons/Creativity/imovie.png", name: "iMovie" },
+      { src: "/icons/Creativity/measure.png", name: "Measure" },
+      { src: "/icons/Creativity/music.png", name: "Music" },
+      { src: "/icons/Creativity/numbers.png", name: "Numbers" },
+      { src: "/icons/Creativity/pages.png", name: "Pages" },
+      { src: "/icons/Creativity/phone.png", name: "Phone" },
+      { src: "/icons/Creativity/photos.png", name: "Photos" },
     ],
   },
   {
-    name: "News",
+    name: "Recently Added",
     icons: [
-      {
-        src: "/icons/Icon-22.png",
-        name: "Icon 22",
-      },
-      {
-        src: "/icons/Icon-23.png",
-        name: "Icon 23",
-      },
-      {
-        src: "/icons/Icon-24.png",
-        name: "Icon 24",
-      },
-      {
-        src: "/icons/Icon-25.png",
-        name: "Icon 25",
-      },
-      {
-        src: "/icons/Icon-26.png",
-        name: "Icon 26",
-      },
-      {
-        src: "/icons/Icon-27.png",
-        name: "Icon 27",
-      },
-      {
-        src: "/icons/Icon-28.png",
-        name: "Icon 28",
-      },
-      {
-        src: "/icons/Icon-29.png",
-        name: "Icon 29",
-      },
-      {
-        src: "/icons/Icon-30.png",
-        name: "Icon 30",
-      },
-      {
-        src: "/icons/Icon-31.png",
-        name: "Icon 31",
-      },
-      {
-        src: "/icons/Icon-32.png",
-        name: "Icon 32",
-      },
-      {
-        src: "/icons/Icon-33.png",
-        name: "Icon 33",
-      },
-      {
-        src: "/icons/Icon-34.png",
-        name: "Icon 34",
-      },
-      {
-        src: "/icons/Icon-35.png",
-        name: "Icon 35",
-      },
-      {
-        src: "/icons/Icon-36.png",
-        name: "Icon 36",
-      },
+      { src: "/icons/RecentlyAdded/apple-store.png", name: "Apple Store" },
+      { src: "/icons/RecentlyAdded/calendar.png", name: "Calendar" },
+      { src: "/icons/RecentlyAdded/camera.png", name: "Camera" },
+      { src: "/icons/RecentlyAdded/clips.png", name: "Clips" },
+      { src: "/icons/RecentlyAdded/clock.png", name: "Clock" },
+      { src: "/icons/RecentlyAdded/contacts.png", name: "Contacts" },
+      { src: "/icons/RecentlyAdded/facetime.png", name: "FaceTime" },
+      { src: "/icons/RecentlyAdded/files.png", name: "Files" },
+      { src: "/icons/RecentlyAdded/health.png", name: "Health" },
+      { src: "/icons/RecentlyAdded/home.png", name: "Home" },
+      { src: "/icons/RecentlyAdded/keynote.png", name: "Keynote" },
+      { src: "/icons/Creativity/imovie.png", name: "iMovie" },
+      { src: "/icons/Creativity/measure.png", name: "Measure" },
+      { src: "/icons/Creativity/music.png", name: "Music" },
+      { src: "/icons/Creativity/numbers.png", name: "Numbers" },
+      { src: "/icons/Creativity/pages.png", name: "Pages" },
+      { src: "/icons/Creativity/phone.png", name: "Phone" },
+      { src: "/icons/Creativity/photos.png", name: "Photos" },
+      { src: "/icons/Games/calculator.png", name: "Calculator" },
+      { src: "/icons/Games/compass.png", name: "Compass" },
+      { src: "/icons/Games/settings.png", name: "Settings" },
+      { src: "/icons/Suggestions/reminders.png", name: "Reminders" },
+      { src: "/icons/Suggestions/safari.png", name: "Safari" },
+      { src: "/icons/Suggestions/stocks.png", name: "Stocks" },
+      { src: "/icons/Suggestions/tv.png", name: "TV" },
+      { src: "/icons/Suggestions/voice-memos.png", name: "Voice Memos" },
+      { src: "/icons/Utilities/imovie.png", name: "iMovie" },
+      { src: "/icons/Utilities/measure.png", name: "Measure" },
+      { src: "/icons/Utilities/music.png", name: "Music" },
+      { src: "/icons/Utilities/numbers.png", name: "Numbers" },
+      { src: "/icons/Utilities/pages.png", name: "Pages" },
+      { src: "/icons/Utilities/phone.png", name: "Phone" },
+      { src: "/icons/Utilities/photos.png", name: "Photos" },
     ],
   },
+  {
+    name: "Suggestions",
+    icons: [
+      { src: "/icons/Suggestions/reminders.png", name: "Reminders" },
+      { src: "/icons/Suggestions/safari.png", name: "Safari" },
+      { src: "/icons/Suggestions/stocks.png", name: "Stocks" },
+      { src: "/icons/Suggestions/tv.png", name: "TV" },
+      { src: "/icons/Suggestions/voice-memos.png", name: "Voice Memos" },
+    ],
+  },
+  {
+    name: "Utilities",
+    icons: [
+      { src: "/icons/Utilities/imovie.png", name: "iMovie" },
+      { src: "/icons/Utilities/measure.png", name: "Measure" },
+      { src: "/icons/Utilities/music.png", name: "Music" },
+      { src: "/icons/Utilities/numbers.png", name: "Numbers" },
+    ],
+  },
+  {
+    name: "Other",
+    icons: [
+      { src: "/icons/Other/pages.png", name: "Pages" },
+      { src: "/icons/Other/phone.png", name: "Phone" },
+      { src: "/icons/Other/photos.png", name: "Photos" },
+    ]
+  },
+  {
+    name: "Sport",
+    icons: [
+      { src: "/icons/Sport/app-store.png", name: "App Store" },
+      { src: "/icons/Sport/books.png", name: "Books" },
+      { src: "/icons/Sport/find-my.png", name: "Find My" },
+      { src: "/icons/Sport/idea.png", name: "Idea" },
+    ]
+  },
+  {
+    name: "Social",
+    icons: [
+      { src: "/icons/Social/mail.png", name: "App Store" },
+      { src: "/icons/Social/messages.png", name: "Books" },
+      { src: "/icons/Social/podcast.png", name: "Find My" },
+    ]
+  },
+  {
+    name: "Entertainment",
+    icons: [
+      { src: "/icons/Entertainment/remote.png", name: "Remote" },
+      { src: "/icons/Entertainment/video.png", name: "Video" },
+      { src: "/icons/Entertainment/wifi.png", name: "Wifi" },
+    ]
+  }
 ];
 
 export default mock;
