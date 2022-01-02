@@ -9,7 +9,7 @@ import { folderDetailVariants } from "../lib/variants";
 const FolderDetail = () => {
   const { folderOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
-  const { blurredRef } = useFolderDetailBlur(folderOpen);
+  const { blurredRef } = useFolderDetailBlur();
   const controls = useAnimation();
 
   useEffect(() => {

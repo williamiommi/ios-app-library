@@ -1,37 +1,56 @@
 const distance = 1.5;
-const transition = { ease: "linear" };
-const closeVariant = { x: 0, y: 0, transition };
+const closeIconVariant = {
+  x: 0,
+  y: 0,
+  transition: { ease: "linear", delay: 0.3 },
+};
 
 export const appLibraryVariants = {
-  open: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  close: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
+  open: { opacity: 1, scale: 1, transition: { duration: 0.5 , ease: "linear" } },
+  close: { opacity: 0, scale: 0.8, transition: { duration: 0.2, ease: "linear", delay: 0.1 } },
 };
 
 export const folderDetailVariants = {
-  open: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  close: { opacity: 0, scale: 0, transition: { duration: 0.2 } },
+  open: { opacity: 1, scale: 1, transition: { delay: 0.3, ease: "linear", duration: 0.3 } },
+  close: { opacity: 0, scale: 0.7, transition: { delay: 0, ease: "linear", duration: 0.3 } },
 };
 
 export const nestedFolderVariants = {
-  open: { scale: 2 },
-  close: { scale: 1 },
+  open: { scale: 1.5, transition: { ease: "linear", duration: 0.2 } },
+  close: { scale: 1, transition: { ease: "linear", duration: 0.2, delay: 0.3 } },
 };
 
 export const iconVariants = [
   {
-    open: { x: distance * -1, y: distance * -1, transition },
-    close: closeVariant,
+    open: {
+      x: distance * -1,
+      y: distance * -1,
+      transition: { ease: "linear", duration: 0.2 },
+    },
+    close: closeIconVariant,
   },
   {
-    open: { x: distance, y: distance * -1, transition },
-    close: closeVariant,
+    open: {
+      x: distance,
+      y: distance * -1,
+      transition: { ease: "linear", duration: 0.2 },
+    },
+    close: closeIconVariant,
   },
   {
-    open: { x: distance * -1, y: distance, transition },
-    close: closeVariant,
+    open: {
+      x: distance * -1,
+      y: distance,
+      transition: { ease: "linear", duration: 0.2 },
+    },
+    close: closeIconVariant,
   },
   {
-    open: { x: distance, y: distance, transition },
-    close: closeVariant,
+    open: {
+      x: distance,
+      y: distance,
+      transition: { ease: "linear", duration: 0.2 },
+    },
+    close: closeIconVariant,
   },
 ];
