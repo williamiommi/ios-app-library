@@ -8,13 +8,20 @@ import TopBar from "./components/TopBar";
 import FolderDetail from "./components/FolderDetail";
 
 const appLibraryVariants = {
-  visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.7 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
 };
 
 function App() {
   const [pro, setPro] = useState(false);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [openFolder, setOpenFolder] = useState(null);
+
+  const openDetail = (folder) => {
+    setIsDetailOpen(true);
+    setOpenFolder(folder);
+  }
+
   return (
     <>
       <div className="grid gap-10 place-items-center">
@@ -23,14 +30,18 @@ function App() {
           <BackdropLayer />
           <TopBar pro={pro} />
           <motion.div
-            animate={openFolder ? "hidden" : "visible"}
+            animate={isDetailOpen ? "hidden" : "visible"}
             variants={appLibraryVariants}
             className="h-full"
           >
             <InputSearch />
-            <FolderWrapper openFolderCB={setOpenFolder} />
+            <FolderWrapper openFolderCB={openDetail} isDetailOpen={isDetailOpen} />
           </motion.div>
-          <FolderDetail folder={openFolder} />
+          <FolderDetail
+            folder={openFolder}
+            setIsDetailOpenCB={setIsDetailOpen}
+            closeFolderCB={setOpenFolder}
+          />
         </PhoneFrame>
       </div>
     </>

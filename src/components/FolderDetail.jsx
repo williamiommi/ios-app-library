@@ -5,23 +5,26 @@ import useFolderDetailBlur from "../hooks/useFolderDetailBlur";
 import { useEffect } from "react";
 
 const variants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
-  hidden: { opacity: 0, scale: 0.75, transition: { duration: 0.7 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
 };
 
-const FolderDetail = ({ folder }) => {
+const FolderDetail = ({ folder, setIsDetailOpenCB, closeFolderCB }) => {
   const { blurredRef } = useFolderDetailBlur(folder);
   const controls = useAnimation();
 
   useEffect(() => {
-    const animate = async () => {
-      if (folder) {
-        controls.set(variants.hidden);
-        controls.start(variants.visible);
-      }
-    };
-    animate();
+    if (folder) {
+      controls.set(variants.hidden);
+      controls.start(variants.visible);
+    }
   }, [folder, controls]);
+
+  const closeFolderHandler = async () => {
+    setIsDetailOpenCB(false);
+    await controls.start(variants.hidden);
+    closeFolderCB(null);
+  };
 
   if (!folder) return null;
   return (
@@ -29,6 +32,7 @@ const FolderDetail = ({ folder }) => {
       animate={controls}
       variants={variants}
       className="absolute inset-0 h-full opacity-0"
+      onClick={closeFolderHandler}
     >
       <SimpleBar className="!absolute flex flex-col justify-center items-center z-20 inset-0 pt-[20%]">
         <div
@@ -40,33 +44,7 @@ const FolderDetail = ({ folder }) => {
         </h2>
         <div className="grid grid-cols-4 gap-3 px-5 pb-5">
           {folder.icons.map((icon) => (
-            <>
-              <Icon
-                key={icon.name + Math.random()}
-                src={icon.src}
-                text={icon.name}
-              />
-              <Icon
-                key={icon.name + Math.random()}
-                src={icon.src}
-                text={icon.name}
-              />
-              <Icon
-                key={icon.name + Math.random()}
-                src={icon.src}
-                text={icon.name}
-              />
-              <Icon
-                key={icon.name + Math.random()}
-                src={icon.src}
-                text={icon.name}
-              />
-              <Icon
-                key={icon.name + Math.random()}
-                src={icon.src}
-                text={icon.name}
-              />
-            </>
+            <Icon key={icon.name} src={icon.src} showText text={icon.name} />
           ))}
         </div>
       </SimpleBar>
