@@ -2,7 +2,7 @@ import { memo } from "react";
 import Icon from "./Icon";
 import NestedFolder from "./NestedFolder";
 
-const Folder = ({ icons, name, openFolderCB }) => {
+const Folder = ({ icons, name }) => {
   let filtered = icons;
   let isNested = false;
   if (icons.length > 4) {
@@ -12,7 +12,7 @@ const Folder = ({ icons, name, openFolderCB }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 bg-gray-700/50 rounded-2xl p-1">
+      <div className="grid grid-cols-2 grid-rows-2 bg-gray-700/50 rounded-2xl p-1">
         {filtered.map((icon) => (
           <Icon
             key={icon.name}
@@ -21,9 +21,7 @@ const Folder = ({ icons, name, openFolderCB }) => {
             imgClass="cursor-pointer"
           />
         ))}
-        {isNested && (
-          <NestedFolder name={name} icons={icons} openFolderCB={openFolderCB} />
-        )}
+        {isNested && <NestedFolder name={name} icons={icons} />}
       </div>
       <p className="font-sans text-center text-white text-sm">{name}</p>
     </div>

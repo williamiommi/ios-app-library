@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useAppDispatchContext, useAppStateContext } from "./context/app";
 import PhoneFrame from "./components/PhoneFrame";
 import BackdropLayer from "./components/BackdropLayer";
 import FolderWrapper from "./components/FolderWrapper";
@@ -13,35 +13,29 @@ const appLibraryVariants = {
 };
 
 function App() {
-  const [pro, setPro] = useState(false);
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
-  const [openFolder, setOpenFolder] = useState(null);
-
-  const openDetail = (folder) => {
-    setIsDetailOpen(true);
-    setOpenFolder(folder);
-  }
+  const { pro, folderOpenName } = useAppStateContext();
+  const dispatch = useAppDispatchContext();
 
   return (
     <>
       <div className="grid gap-10 place-items-center">
-        <button onClick={() => setPro(!pro)}>pro</button>
+        <button onClick={() => dispatch({ type: "TOGGLE.PRO" })}>pro</button>
         <PhoneFrame pro={pro}>
           <BackdropLayer />
-          <TopBar pro={pro} />
+          <TopBar />
           <motion.div
-            animate={isDetailOpen ? "hidden" : "visible"}
+            animate={folderOpenName ? "hidden" : "visible"}
             variants={appLibraryVariants}
             className="h-full"
           >
             <InputSearch />
-            <FolderWrapper openFolderCB={openDetail} isDetailOpen={isDetailOpen} />
+            <FolderWrapper />
           </motion.div>
-          <FolderDetail
+          {/* <FolderDetail
             folder={openFolder}
             setIsDetailOpenCB={setIsDetailOpen}
             closeFolderCB={setOpenFolder}
-          />
+          /> */}
         </PhoneFrame>
       </div>
     </>

@@ -3,7 +3,7 @@ import SimpleBar from "simplebar-react";
 import mock from "../mock";
 import Folder from "./Folder";
 
-function FolderWrapper({ openFolderCB }) {
+function FolderWrapper() {
   return (
     <SimpleBar className="!absolute top-0 p-5 pt-24 w-full max-h-full">
       <div className="grid grid-cols-2 gap-5">
@@ -12,7 +12,6 @@ function FolderWrapper({ openFolderCB }) {
             key={folder.name}
             icons={folder.icons}
             name={folder.name}
-            openFolderCB={openFolderCB}
           />
         ))}
       </div>
