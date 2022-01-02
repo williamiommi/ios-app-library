@@ -6,7 +6,6 @@ const useFolderDetailBlur = (folder) => {
     if (!folder || !blurredRef.current) return null;
     const observer = new IntersectionObserver(
       ([e]) => {
-        console.log(e);
         blurredRef.current.classList.toggle(
           "!visible",
           e.intersectionRatio < 1

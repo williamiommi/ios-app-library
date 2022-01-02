@@ -45,7 +45,7 @@ const FolderDetail = () => {
       className={`absolute inset-0 h-full opacity-0`}
       onClick={closeFolderHandler}
     >
-      <SimpleBar className="!absolute flex flex-col justify-center items-center z-20 inset-0 pt-[20%]">
+      <SimpleBar className="!absolute flex flex-col justify-center items-center z-20 inset-0 pt-[35%]">
         <div
           ref={blurredRef}
           className="invisible sticky w-full top-[-1px] z-30 h-[90px] backdrop-blur-md"
