@@ -3,30 +3,33 @@ import SimpleBar from "simplebar-react";
 import Icon from "./Icon";
 import useFolderDetailBlur from "../hooks/useFolderDetailBlur";
 import { useEffect } from "react";
+import { useAppDispatchContext, useAppStateContext } from "../context/app";
 
 const variants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0, transition: { duration: 0.2 } },
 };
 
-const FolderDetail = ({ folder, setIsDetailOpenCB, closeFolderCB }) => {
-  const { blurredRef } = useFolderDetailBlur(folder);
+const FolderDetail = () => {
+  const { folderOpen } = useAppStateContext();
+  const dispatch = useAppDispatchContext();
+  const { blurredRef } = useFolderDetailBlur(folderOpen);
   const controls = useAnimation();
 
   useEffect(() => {
-    if (folder) {
+    if (folderOpen) {
       controls.set(variants.hidden);
       controls.start(variants.visible);
     }
-  }, [folder, controls]);
+  }, [folderOpen, controls]);
 
   const closeFolderHandler = async () => {
-    setIsDetailOpenCB(false);
+    dispatch({ type: "SET.FOLDER.NAME", payload: null });
     await controls.start(variants.hidden);
-    closeFolderCB(null);
+    dispatch({ type: "SET.FOLDER", payload: null });
   };
 
-  if (!folder) return null;
+  if (!folderOpen) return null;
   return (
     <motion.div
       animate={controls}
@@ -40,10 +43,10 @@ const FolderDetail = ({ folder, setIsDetailOpenCB, closeFolderCB }) => {
           className="invisible sticky w-full top-[-1px] z-30 h-[90px] backdrop-blur-md"
         ></div>
         <h2 className="sticky top-[50px] w-full text-white text-3xl mb-10 tracking-wide z-40 px-5">
-          {folder.name}
+          {folderOpen.name}
         </h2>
         <div className="grid grid-cols-4 gap-3 px-5 pb-5">
-          {folder.icons.map((icon) => (
+          {folderOpen.icons.map((icon) => (
             <Icon key={icon.name} src={icon.src} showText text={icon.name} />
           ))}
         </div>

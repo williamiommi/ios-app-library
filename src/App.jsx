@@ -8,8 +8,8 @@ import TopBar from "./components/TopBar";
 import FolderDetail from "./components/FolderDetail";
 
 const appLibraryVariants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+  // visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  // hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
 };
 
 function App() {
@@ -31,11 +31,7 @@ function App() {
             <InputSearch />
             <FolderWrapper />
           </motion.div>
-          {/* <FolderDetail
-            folder={openFolder}
-            setIsDetailOpenCB={setIsDetailOpen}
-            closeFolderCB={setOpenFolder}
-          /> */}
+          {/* <FolderDetail /> */}
         </PhoneFrame>
       </div>
     </>
