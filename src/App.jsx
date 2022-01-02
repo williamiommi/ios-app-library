@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useAppDispatchContext, useAppStateContext } from "./context/app";
+import { useAppStateContext } from "./context/app";
 import { appLibraryVariants } from "./lib/variants";
 import PhoneFrame from "./components/PhoneFrame";
 import BackdropLayer from "./components/BackdropLayer";
@@ -10,12 +10,10 @@ import FolderDetail from "./components/FolderDetail";
 
 function App() {
   const { pro, folderOpenName } = useAppStateContext();
-  const dispatch = useAppDispatchContext();
 
   return (
     <>
-      <div className="grid gap-10 place-items-center">
-        <button onClick={() => dispatch({ type: "TOGGLE.PRO" })}>pro</button>
+      <div className="grid gap-10 place-items-center my-5">
         <PhoneFrame pro={pro}>
           <BackdropLayer />
           <TopBar />
