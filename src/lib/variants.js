@@ -1,8 +1,8 @@
-const distance = 1.5;
+const distance = 10;
 const closeIconVariant = {
   x: 0,
   y: 0,
-  transition: { ease: "linear", delay: 0.2 },
+  transition: { ease: "linear", delay: 0 },
 };
 
 export const appLibraryVariants = {
@@ -33,7 +33,7 @@ export const nestedFolderVariants = {
   open: { scale: 1.5, transition: { ease: "linear", duration: 0.2 } },
   close: {
     scale: 1,
-    transition: { ease: "linear", duration: 0.2, delay: 0.2 },
+    transition: { ease: "linear", duration: 0.3, delay: 0 },
   },
 };
 
