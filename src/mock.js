@@ -88,6 +88,10 @@ const mock = [
       { src: "/icons/Sport/books.png", name: "Books" },
       { src: "/icons/Sport/find-my.png", name: "Find My" },
       { src: "/icons/Sport/idea.png", name: "Idea" },
+      { src: "/icons/Utilities/imovie.png", name: "iMovie" },
+      { src: "/icons/Utilities/measure.png", name: "Measure" },
+      { src: "/icons/Utilities/music.png", name: "Music" },
+      { src: "/icons/Utilities/numbers.png", name: "Numbers" },
     ]
   },
   {
