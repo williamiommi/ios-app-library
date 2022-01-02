@@ -1,16 +1,12 @@
 import { motion } from "framer-motion";
 import { useAppDispatchContext, useAppStateContext } from "./context/app";
+import { appLibraryVariants } from "./lib/variants";
 import PhoneFrame from "./components/PhoneFrame";
 import BackdropLayer from "./components/BackdropLayer";
 import FolderWrapper from "./components/FolderWrapper";
 import InputSearch from "./components/InputSearch";
 import TopBar from "./components/TopBar";
 import FolderDetail from "./components/FolderDetail";
-
-const appLibraryVariants = {
-  // visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  // hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
-};
 
 function App() {
   const { pro, folderOpenName } = useAppStateContext();
@@ -24,14 +20,14 @@ function App() {
           <BackdropLayer />
           <TopBar />
           <motion.div
-            animate={folderOpenName ? "hidden" : "visible"}
+            animate={folderOpenName ? "close" : "open"}
             variants={appLibraryVariants}
             className="h-full"
           >
             <InputSearch />
             <FolderWrapper />
           </motion.div>
-          {/* <FolderDetail /> */}
+          <FolderDetail />
         </PhoneFrame>
       </div>
     </>

@@ -4,11 +4,7 @@ import Icon from "./Icon";
 import useFolderDetailBlur from "../hooks/useFolderDetailBlur";
 import { useEffect } from "react";
 import { useAppDispatchContext, useAppStateContext } from "../context/app";
-
-const variants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, scale: 0, transition: { duration: 0.2 } },
-};
+import { folderDetailVariants } from "../lib/variants";
 
 const FolderDetail = () => {
   const { folderOpen } = useAppStateContext();
@@ -18,14 +14,14 @@ const FolderDetail = () => {
 
   useEffect(() => {
     if (folderOpen) {
-      controls.set(variants.hidden);
-      controls.start(variants.visible);
+      controls.set(folderDetailVariants.close);
+      controls.start(folderDetailVariants.open);
     }
   }, [folderOpen, controls]);
 
   const closeFolderHandler = async () => {
     dispatch({ type: "SET.FOLDER.NAME", payload: null });
-    await controls.start(variants.hidden);
+    await controls.start(folderDetailVariants.close);
     dispatch({ type: "SET.FOLDER", payload: null });
   };
 
@@ -33,7 +29,7 @@ const FolderDetail = () => {
   return (
     <motion.div
       animate={controls}
-      variants={variants}
+      variants={folderDetailVariants}
       className="absolute inset-0 h-full opacity-0"
       onClick={closeFolderHandler}
     >
