@@ -9,6 +9,9 @@ export default function AppReducer(state, action) {
     case "SET.FOLDER": {
       return { ...state, folderOpen: action.payload };
     }
+    case "TOGGLE.FOLDER.LIST": {
+      return { ...state, isFolderListOpen: !state.isFolderListOpen };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action}`);
     }

@@ -71,3 +71,8 @@ export const iconVariants = [
     close: closeIconVariant,
   },
 ];
+
+export const folderListVariants = {
+  open: { opacity: 1, pointerEvents: 'auto' },
+  close: { opacity: 0, pointerEvents: 'none' },
+};

@@ -7,6 +7,7 @@ const state = {
   appsDict: data.appsDict,
   folderOpenName: null,
   folderOpen: null,
+  isFolderListOpen: false,
 };
 
 export default state;
