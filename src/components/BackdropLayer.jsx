@@ -16,7 +16,7 @@ const BackdropLayer = ({ level, children }) => {
       break;
   }
   return (
-    <div className={`absolute inset-0 bg-black/20 rounded-[40px] ${backdropLevel}`}>
+    <div className={`absolute inset-0 bg-black/20 ${backdropLevel}`}>
       {children}
     </div>
   );

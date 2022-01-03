@@ -48,7 +48,7 @@ const FolderDetail = () => {
       <SimpleBar className="!absolute flex flex-col justify-center items-center z-20 inset-0 pt-[35%]">
         <div
           ref={blurredRef}
-          className="invisible sticky w-full top-[-1px] z-30 h-[90px] rounded-t-[40px] backdrop-blur-md"
+          className="invisible sticky w-full top-[-1px] z-30 h-[90px] backdrop-blur-md"
         ></div>
         <h2 className="sticky top-[50px] w-full text-white text-3xl mb-10 tracking-wide z-40 px-5">
           {folderOpen.name}
