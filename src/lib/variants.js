@@ -79,7 +79,7 @@ export const folderListVariants = {
 
 export const inputSearchBlockVariants = {
   close: { width: "100%", transition: { ease: "linear", duration: 0.3, delay: 0.28 } },
-  open: { width: "80%", transition: { ease: "linear", duration: 0.3 } },
+  open: { width: "88%", transition: { ease: "linear", duration: 0.3 } },
 };
 
 export const inputSearchWrapperVariants = {
@@ -101,6 +101,6 @@ export const inputSearchVariants = {
 };
 
 export const inputSearchCancelVariants = {
-  close: { right: 0, x: "150%", transition: { ease: "linear", duration: 0.3 } },
-  open: { right: 0, x: 0, transition: { ease: "linear", duration: 0.3 } },
+  close: { opacity: 0, right: 0, x: "150%", transition: { ease: "linear", duration: 0.3 } },
+  open: { opacity: 1, right: 0, x: 10, transition: { ease: "linear", duration: 0.3 } },
 };

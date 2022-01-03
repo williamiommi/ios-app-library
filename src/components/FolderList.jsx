@@ -43,7 +43,7 @@ const FolderList = () => {
                 <FolderListEntry key={key} char={key} apps={appsDict[key]} />
               ))}
           </SimpleBar>
-          <AlphabetList onClick={clickAlphabet} />
+          {!filteredApps && <AlphabetList onClick={clickAlphabet} />}
         </>
       )}
     </motion.div>
