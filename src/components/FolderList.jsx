@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import SimpleBar from "simplebar-react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useAppStateContext } from "../context/app";
 import { folderListVariants } from "../lib/variants";
 import BackdropLayer from "./BackdropLayer";
@@ -9,6 +9,7 @@ import AlphabetList from "./AlphabetList";
 
 const FolderList = () => {
   const scrollRef = useRef();
+  const wrapperControls = useAnimation();
   const { isFolderListOpen, appsDict, filteredApps } = useAppStateContext();
   const clickAlphabet = (id) => {
     const el = document.getElementById(id);
@@ -18,10 +19,23 @@ const FolderList = () => {
       scrollRef.current.contentWrapperEl.scroll({ top: rect.top - 120 });
     }
   };
+
+  useEffect(() => {
+    const animation = async () => {
+      if (isFolderListOpen) {
+        wrapperControls.start(folderListVariants.open);
+      } else {
+        await wrapperControls.start(folderListVariants.close);
+        scrollRef.current.contentWrapperEl.scroll({ top: 0 });
+      }
+    }
+    animation();
+  }, [isFolderListOpen, wrapperControls]);
+
   return (
     <motion.div
       initial={folderListVariants.close}
-      animate={isFolderListOpen ? "open" : "close"}
+      animate={wrapperControls}
       variants={folderListVariants}
       className="absolute inset-0"
     >
