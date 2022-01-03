@@ -4,7 +4,7 @@ const PhoneFrame = ({ children, pro }) => {
   const frameSize = pro ? "h-[926px] w-[428px]" : "h-[712px] w-[350px]";
   return (
     <div
-      className={`${frameSize} relative overflow-hidden border-[14px] border-black bg-black rounded-[60px] pb-5 shadow-xl ring ring-orange-400 backdrop-blur-md`}
+      className={`${frameSize} relative overflow-hidden border-[14px] border-black bg-black rounded-[60px] pb-5 ring ring-orange-400`}
     >
       <img
         src="/bg.png"

@@ -6,7 +6,7 @@ import Folder from "./Folder";
 function FolderWrapper() {
   const { folders } = useAppStateContext();
   return (
-    <SimpleBar className="!absolute top-0 p-5 pt-24 w-full max-h-full">
+    <SimpleBar className="!absolute top-0 p-5 pt-28 w-full max-h-full">
       <div className="grid grid-cols-2 gap-5">
         {folders.map((folder) => (
           <Folder
