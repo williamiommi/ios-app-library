@@ -1,8 +1,9 @@
-import mock from "../../mock";
+import data from "../../mock";
 
 const state = {
   pro: true,
-  folders: mock,
+  folders: data.folders,
+  apps: data.apps,
   folderOpenName: null,
   folderOpen: null,
 };

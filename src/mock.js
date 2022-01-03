@@ -1,4 +1,4 @@
-const mock = [
+const folders = [
   {
     name: "Games",
     icons: [
@@ -79,7 +79,7 @@ const mock = [
       { src: "/icons/Other/pages.png", name: "Pages" },
       { src: "/icons/Other/phone.png", name: "Phone" },
       { src: "/icons/Other/photos.png", name: "Photos" },
-    ]
+    ],
   },
   {
     name: "Sport",
@@ -92,7 +92,7 @@ const mock = [
       { src: "/icons/Utilities/measure.png", name: "Measure" },
       { src: "/icons/Utilities/music.png", name: "Music" },
       { src: "/icons/Utilities/numbers.png", name: "Numbers" },
-    ]
+    ],
   },
   {
     name: "Social",
@@ -100,7 +100,7 @@ const mock = [
       { src: "/icons/Social/mail.png", name: "App Store" },
       { src: "/icons/Social/messages.png", name: "Books" },
       { src: "/icons/Social/podcast.png", name: "Find My" },
-    ]
+    ],
   },
   {
     name: "Entertainment",
@@ -108,8 +108,30 @@ const mock = [
       { src: "/icons/Entertainment/remote.png", name: "Remote" },
       { src: "/icons/Entertainment/video.png", name: "Video" },
       { src: "/icons/Entertainment/wifi.png", name: "Wifi" },
-    ]
-  }
+    ],
+  },
 ];
 
-export default mock;
+let apps = [];
+folders.reduce((acc, folder) => {
+  folder.icons.forEach((icon) => {
+    if (!acc[icon.name.toLowerCase()]) apps.push(icon);
+    acc[icon.name.toLowerCase()] = icon;
+  });
+  return acc;
+}, {});
+
+const sortingApps = (a, b) => {
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    return -1;
+  }
+  if (a.name.toLowerCase() > b.name.toLowerCase()) {
+    return 1;
+  }
+  return 0;
+};
+
+apps = apps.sort(sortingApps);
+
+const data = { apps, folders };
+export default data;
