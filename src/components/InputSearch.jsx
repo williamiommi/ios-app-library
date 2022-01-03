@@ -23,6 +23,7 @@ const InputSearch = () => {
     }
   };
   const closeFolderList = () => {
+    setSearchTerm('');
     dispatch({ type: "TOGGLE.FOLDER.LIST" });
   };
 
@@ -50,6 +51,7 @@ const InputSearch = () => {
             <Lens />
             <motion.input
               ref={inputRef}
+              value={searchTerm}
               animate={isFolderListOpen ? "open" : "close"}
               initial={inputSearchVariants.close}
               variants={inputSearchVariants}
