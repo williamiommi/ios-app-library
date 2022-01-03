@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useAppDispatchContext, useAppStateContext } from "../context/app";
 import Lens from "./icons/Lens";
@@ -8,17 +8,28 @@ import {
   inputSearchVariants,
   inputSearchCancelVariants,
 } from "../lib/variants";
+import useDebounce from "../hooks/useDebounce";
 
 const InputSearch = () => {
   const inputRef = useRef();
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm);
   const { isFolderListOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
   const openFolderList = () => {
-    if (!isFolderListOpen) dispatch({ type: "TOGGLE.FOLDER.LIST" });
+    if (!isFolderListOpen) {
+      dispatch({ type: "TOGGLE.FOLDER.LIST" });
+      inputRef.current.focus();
+    }
   };
   const closeFolderList = () => {
     dispatch({ type: "TOGGLE.FOLDER.LIST" });
   };
+
+  useEffect(() => {
+    dispatch({ type: "FILTER.APPS", payload: debouncedSearchTerm });
+  }, [dispatch, debouncedSearchTerm]);
+
   return (
     <div className="relative z-50 flex items-end w-full h-[100px] pb-4">
       <div className="relative flex items-center w-full mx-5">
@@ -44,6 +55,7 @@ const InputSearch = () => {
               variants={inputSearchVariants}
               type="text"
               placeholder="App Library"
+              onChange={(e) => setSearchTerm(e.target.value)}
               className={`text-white text-sm ml-1 placeholder:text-gray-500 bg-transparent outline-none`}
             />
           </motion.div>

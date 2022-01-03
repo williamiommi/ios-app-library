@@ -1,3 +1,5 @@
+import { calculateAppsDict, sortApps } from "./lib/utils";
+
 const Alphabet = [
   "A",
   "B",
@@ -150,24 +152,8 @@ folders.reduce((acc, folder) => {
   return acc;
 }, {});
 
-const sortingApps = (a, b) => {
-  if (a.name.toLowerCase() < b.name.toLowerCase()) {
-    return -1;
-  }
-  if (a.name.toLowerCase() > b.name.toLowerCase()) {
-    return 1;
-  }
-  return 0;
-};
-
-apps = apps.sort(sortingApps);
-
-const appsDict = {}
-apps.forEach(app => {
-  const fisrtChar = app.name.charAt(0).toUpperCase();
-  if (!appsDict[fisrtChar]) appsDict[fisrtChar] = [app];
-  else appsDict[fisrtChar] = appsDict[fisrtChar].concat(app);
-});
+apps = apps.sort(sortApps);
+const appsDict = calculateAppsDict(apps);
 
 const data = { apps, appsDict, folders };
 export default data;

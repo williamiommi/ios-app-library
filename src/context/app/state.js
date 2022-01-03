@@ -5,6 +5,7 @@ const state = {
   folders: data.folders,
   apps: data.apps,
   appsDict: data.appsDict,
+  filteredApps: null,
   folderOpenName: null,
   folderOpen: null,
   isFolderListOpen: false,

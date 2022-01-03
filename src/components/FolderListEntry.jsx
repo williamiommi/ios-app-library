@@ -4,12 +4,14 @@ const FolderListEntry = ({ char, apps }) => {
   const { titleRef } = useFolderListEntryChar();
   return (
     <div>
-      <h4
-        ref={titleRef}
-        className="sticky top-[90px] px-5 text-white z-40 transition-opacity duration-300"
-      >
-        {char}
-      </h4>
+      {char && (
+        <h4
+          ref={titleRef}
+          className="sticky top-[90px] px-5 text-white z-40 transition-opacity duration-300"
+        >
+          {char}
+        </h4>
+      )}
       <ul className="text-white text-sm font-bold z-10">
         {apps.map((app) => (
           <li
