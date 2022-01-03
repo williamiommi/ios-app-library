@@ -1,6 +1,6 @@
 import { calculateAppsDict, sortApps } from "./lib/utils";
 
-const Alphabet = [
+const alphabet = [
   "A",
   "B",
   "C",
@@ -155,5 +155,5 @@ folders.reduce((acc, folder) => {
 apps = apps.sort(sortApps);
 const appsDict = calculateAppsDict(apps);
 
-const data = { apps, appsDict, folders };
+const data = { alphabet, apps, appsDict, folders };
 export default data;

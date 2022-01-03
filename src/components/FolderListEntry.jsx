@@ -7,6 +7,7 @@ const FolderListEntry = ({ char, apps }) => {
       {char && (
         <h4
           ref={titleRef}
+          id={`char${char}`}
           className="sticky top-[90px] px-5 text-white z-40 transition-opacity duration-300"
         >
           {char}
