@@ -39,10 +39,12 @@ const InputSearch = () => {
             <Lens />
             <motion.input
               ref={inputRef}
+              animate={isFolderListOpen ? "open" : "close"}
+              initial={inputSearchVariants.close}
               variants={inputSearchVariants}
               type="text"
               placeholder="App Library"
-              className={`text-white text-sm ml-1 placeholder:text-gray-500 bg-red-500 outline-none w-[76px]`}
+              className={`text-white text-sm ml-1 placeholder:text-gray-500 bg-transparent outline-none`}
             />
           </motion.div>
         </motion.div>
