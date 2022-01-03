@@ -1,23 +1,61 @@
-import { memo } from "react";
-import { useAppDispatchContext } from "../context/app";
+import { memo, useRef } from "react";
+import { motion } from "framer-motion";
+import { useAppDispatchContext, useAppStateContext } from "../context/app";
 import Lens from "./icons/Lens";
+import {
+  inputSearchBlockVariants,
+  inputSearchWrapperVariants,
+  inputSearchVariants,
+  inputSearchCancelVariants,
+} from "../lib/variants";
 
 const InputSearch = () => {
+  const inputRef = useRef();
+  const { isFolderListOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
-  const toggleFolderList = () => {
-    dispatch({ type: 'TOGGLE.FOLDER.LIST' })
-  }
+  const openFolderList = () => {
+    if (!isFolderListOpen) dispatch({ type: "TOGGLE.FOLDER.LIST" });
+  };
+  const closeFolderList = () => {
+    dispatch({ type: "TOGGLE.FOLDER.LIST" });
+  };
   return (
     <div className="relative z-50 flex items-end w-full h-[100px] pb-4">
-      <div className="flex items-center w-full mx-5">
-        <button type="button" className="flex justify-center items-center w-full h-12 bg-gray-700/90 rounded-2xl" onClick={toggleFolderList}>
-          <div className="absolute flex items-center transition-all duration-500 left-1/2 translate-x-[-50%]">
+      <div className="relative flex items-center w-full mx-5">
+        <motion.div
+          animate={isFolderListOpen ? "open" : "close"}
+          initial={inputSearchBlockVariants.close}
+          variants={inputSearchBlockVariants}
+          role="button"
+          className="relative flex justify-center items-center h-12 bg-gray-700/90 rounded-2xl"
+          onClick={openFolderList}
+        >
+          <motion.div
+            animate={isFolderListOpen ? "open" : "close"}
+            initial={inputSearchWrapperVariants.close}
+            variants={inputSearchWrapperVariants}
+            className="absolute flex items-center"
+          >
             <Lens />
-            <span className="inline text-gray-500 w-full text-sm ml-1">
-              App Library
-            </span>
-          </div>
-        </button>
+            <motion.input
+              ref={inputRef}
+              variants={inputSearchVariants}
+              type="text"
+              placeholder="App Library"
+              className={`text-white text-sm ml-1 placeholder:text-gray-500 bg-red-500 outline-none w-[76px]`}
+            />
+          </motion.div>
+        </motion.div>
+        <motion.button
+          type="button"
+          animate={isFolderListOpen ? "open" : "close"}
+          initial={inputSearchCancelVariants.close}
+          variants={inputSearchCancelVariants}
+          className="absolute text-white text-sm ml-2"
+          onClick={closeFolderList}
+        >
+          Cancel
+        </motion.button>
       </div>
     </div>
   );

@@ -73,6 +73,34 @@ export const iconVariants = [
 ];
 
 export const folderListVariants = {
-  open: { opacity: 1, pointerEvents: 'auto' },
-  close: { opacity: 0, pointerEvents: 'none' },
+  open: { opacity: 1, pointerEvents: "auto" },
+  close: { opacity: 0, pointerEvents: "none" },
+};
+
+export const inputSearchBlockVariants = {
+  close: { width: "100%", transition: { ease: "linear", duration: 0.3 } },
+  open: { width: "80%", transition: { ease: "linear", duration: 0.3 } },
+};
+
+export const inputSearchWrapperVariants = {
+  close: {
+    left: "50%",
+    x: "-50%",
+    transition: { ease: "linear", duration: 0.3 },
+  },
+  open: {
+    left: "10px",
+    x: 0,
+    transition: { ease: "linear", duration: 0.3, delayChildren: 0.3 },
+  },
+};
+
+export const inputSearchVariants = {
+  close: { width: "75px", transition: { duration: 0 } },
+  open: { width: "100%", transition: { duration: 0 } },
+};
+
+export const inputSearchCancelVariants = {
+  close: { right: 0, x: "150%", transition: { ease: "linear", duration: 0.3 } },
+  open: { right: 0, x: 0, transition: { ease: "linear", duration: 0.3 } },
 };
