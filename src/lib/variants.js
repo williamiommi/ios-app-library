@@ -6,7 +6,7 @@ const closeIconVariant = {
 };
 
 export const appLibraryVariants = {
-  open: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "linear" } },
+  open: { opacity: 1, scale: 1, transition: { duration: 0.199, ease: "linear" } },
   close: {
     opacity: 0,
     scale: 0.8,
@@ -20,12 +20,12 @@ export const folderDetailVariants = {
     y: 0,
     opacity: 1,
     scale: 1,
-    transition: { delay: 0, ease: "linear", duration: 0.3 },
+    transition: { delay: 0, ease: "linear", duration: 0.199 },
   },
   close: {
     opacity: 0,
     scale: 0,
-    transition: { delay: 0, ease: "linear", duration: 0.3 },
+    transition: { delay: 0, ease: "linear", duration: 0.199 },
   },
 };
 
@@ -33,7 +33,7 @@ export const nestedFolderVariants = {
   open: { scale: 1.5, transition: { ease: "linear", duration: 0.2 } },
   close: {
     scale: 1,
-    transition: { ease: "linear", duration: 0.3, delay: 0 },
+    transition: { ease: "linear", duration: 0.199, delay: 0 },
   },
 };
 
@@ -78,29 +78,29 @@ export const folderListVariants = {
 };
 
 export const inputSearchBlockVariants = {
-  close: { width: "100%", transition: { ease: "linear", duration: 0.3, delay: 0.28 } },
-  open: { width: "88%", transition: { ease: "linear", duration: 0.3 } },
+  close: { width: "100%", transition: { ease: "linear", duration: 0.199, delay: 0.28 } },
+  open: { width: "88%", transition: { ease: "linear", duration: 0.199 } },
 };
 
 export const inputSearchWrapperVariants = {
   close: {
     left: "50%",
     x: "-50%",
-    transition: { ease: "linear", duration: 0.3 },
+    transition: { ease: "linear", duration: 0.199 },
   },
   open: {
     left: "10px",
     x: 0,
-    transition: { ease: "linear", duration: 0.3 },
+    transition: { ease: "linear", duration: 0.199 },
   },
 };
 
 export const inputSearchVariants = {
   close: { width: "76px", transition: { ease: "linear", duration: 0, delay: 0 } },
-  open: { width: "100%", transition: { ease: "linear", duration: 0, delay: 0.3 } },
+  open: { width: "100%", transition: { ease: "linear", duration: 0, delay: 0.199 } },
 };
 
 export const inputSearchCancelVariants = {
-  close: { opacity: 0, right: 0, x: "150%", transition: { ease: "linear", duration: 0.3 } },
-  open: { opacity: 1, right: 0, x: 10, transition: { ease: "linear", duration: 0.3 } },
+  close: { opacity: 0, right: 0, x: "150%", transition: { ease: "linear", duration: 0.199 } },
+  open: { opacity: 1, right: 0, x: 10, transition: { ease: "linear", duration: 0.199 } },
 };
