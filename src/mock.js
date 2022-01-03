@@ -163,11 +163,10 @@ const sortingApps = (a, b) => {
 apps = apps.sort(sortingApps);
 
 const appsDict = {}
-Alphabet.forEach(char => appsDict[char] = []);
-
 apps.forEach(app => {
   const fisrtChar = app.name.charAt(0).toUpperCase();
-  appsDict[fisrtChar] = appsDict[fisrtChar].concat(app);
+  if (!appsDict[fisrtChar]) appsDict[fisrtChar] = [app];
+  else appsDict[fisrtChar] = appsDict[fisrtChar].concat(app);
 });
 
 const data = { apps, appsDict, folders };

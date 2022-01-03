@@ -7,6 +7,7 @@ import FolderWrapper from "./components/FolderWrapper";
 import InputSearch from "./components/InputSearch";
 import TopBar from "./components/TopBar";
 import FolderDetail from "./components/FolderDetail";
+import FolderList from "./components/FolderList";
 
 function App() {
   const { pro, folderOpenName } = useAppStateContext();
@@ -26,6 +27,7 @@ function App() {
             <FolderWrapper />
           </motion.div>
           <FolderDetail />
+          <FolderList />
         </PhoneFrame>
       </div>
     </>
