@@ -1,3 +1,32 @@
+const Alphabet = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "#",
+];
 const folders = [
   {
     name: "Games",
@@ -133,5 +162,13 @@ const sortingApps = (a, b) => {
 
 apps = apps.sort(sortingApps);
 
-const data = { apps, folders };
+const appsDict = {}
+Alphabet.forEach(char => appsDict[char] = []);
+
+apps.forEach(app => {
+  const fisrtChar = app.name.charAt(0).toUpperCase();
+  appsDict[fisrtChar] = appsDict[fisrtChar].concat(app);
+});
+
+const data = { apps, appsDict, folders };
 export default data;
