@@ -5,13 +5,13 @@ const FolderListEntry = ({ char, apps }) => {
   return (
     <div>
       {char && (
-        <span
+        <h4
           ref={titleRef}
           id={`char${char}`}
-          className="sticky top-[90px] pl-5 text-white z-40 transition-opacity duration-300"
+          className="sticky w-[10px] top-[90px] pl-5 text-white z-40 transition-opacity duration-300"
         >
           {char}
-        </span>
+        </h4>
       )}
       <ul className="text-white text-sm font-bold z-10">
         {apps.map((app) => (
