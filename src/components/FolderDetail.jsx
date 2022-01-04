@@ -50,9 +50,9 @@ const FolderDetail = () => {
       <div className="absolute z-20 inset-0 overflow-y-auto">
         <div
           ref={blurredRef}
-          className="invisible sticky w-full top-[-1px] z-30 h-[90px] backdrop-blur-md mt-[35%]"
+          className="invisible sticky w-full top-[-1px] z-30 h-[90px] backdrop-blur-md"
         ></div>
-        <h2 className="sticky top-[50px] w-full text-white text-3xl mb-10 tracking-wide z-40 px-5">
+        <h2 className="sticky top-[50px] w-full text-white text-3xl mb-10 tracking-wide z-40 px-5 mt-[35%]">
           {folderOpen.name}
         </h2>
         <div className="grid grid-cols-4 gap-3 px-5 pb-10">
