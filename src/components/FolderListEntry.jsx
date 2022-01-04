@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import useFolderListEntryChar from "../hooks/useFolderListEntryChar";
 
 const FolderListEntry = ({ char, apps }) => {
