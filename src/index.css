@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.overflow-y-scroll {
+.overflow-y-auto {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
-.overflow-y-scroll::-webkit-scrollbar {
+.overflow-y-auto::-webkit-scrollbar {
   display: none;
 }

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import SimpleBar from "simplebar-react";
 import { motion, useAnimation } from "framer-motion";
 import { useAppStateContext } from "../context/app";
 import { folderListVariants } from "../lib/variants";
@@ -14,9 +13,9 @@ const FolderList = () => {
   const clickAlphabet = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      scrollRef.current.contentWrapperEl.scroll({ top: 0 });
+      scrollRef.current.scroll({ top: 0 });
       const rect = el.getBoundingClientRect();
-      scrollRef.current.contentWrapperEl.scroll({ top: rect.top - 120 });
+      scrollRef.current.scroll({ top: rect.top - 120 });
     }
   };
 
@@ -26,9 +25,9 @@ const FolderList = () => {
         wrapperControls.start(folderListVariants.open);
       } else {
         await wrapperControls.start(folderListVariants.close);
-        scrollRef.current.contentWrapperEl.scroll({ top: 0 });
+        if (scrollRef.current) scrollRef.current.scroll({ top: 0 });
       }
-    }
+    };
     animation();
   }, [isFolderListOpen, wrapperControls]);
 
@@ -46,9 +45,9 @@ const FolderList = () => {
         </p>
       ) : (
         <>
-          <SimpleBar
+          <div
             ref={scrollRef}
-            className="!absolute inset-0 pb-10 w-full max-h-full"
+            className="!absolute inset-0 pb-10 w-full max-h-full overflow-y-auto"
           >
             <div className="sticky top-[0] left-0 w-full h-[115px] backdrop-blur-sm z-30" />
             {filteredApps && <FolderListEntry apps={filteredApps} />}
@@ -56,7 +55,7 @@ const FolderList = () => {
               Object.keys(appsDict).map((key) => (
                 <FolderListEntry key={key} char={key} apps={appsDict[key]} />
               ))}
-          </SimpleBar>
+          </div>
           {!filteredApps && <AlphabetList onClick={clickAlphabet} />}
         </>
       )}
