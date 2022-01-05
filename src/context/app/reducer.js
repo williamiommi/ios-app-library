@@ -1,13 +1,24 @@
+import { getCenterPointsDifference } from "../../lib/utils";
+
 export default function AppReducer(state, action) {
   switch (action.type) {
-    case "TOGGLE.PRO": {
-      return { ...state, pro: !state.pro };
+    case "SET.CENTER.COORDS": {
+      return { ...state, centerCoords: action.payload };
     }
     case "SET.FOLDER.NAME": {
       return { ...state, folderOpenName: action.payload };
     }
     case "SET.FOLDER": {
-      return { ...state, folderOpen: action.payload };
+      return {
+        ...state,
+        folderOpen: action.payload,
+        distanceFromCenter: action.payload
+          ? getCenterPointsDifference(state.centerCoords, {
+              x: action.payload.x,
+              y: action.payload.y,
+            })
+          : null,
+      };
     }
     case "TOGGLE.FOLDER.LIST": {
       return { ...state, isFolderListOpen: !state.isFolderListOpen };

@@ -6,6 +6,12 @@ export const getCenterBox = (el) => {
   };
 };
 
+export const getCenterPointsDifference = (startingCoordinates, finalCoordinates) => ({
+  x: (startingCoordinates.x - finalCoordinates.x) * -1,
+  y: (startingCoordinates.y - finalCoordinates.y) * -1,
+});
+
+
 export const sortApps = (a, b) => {
   if (a.name.toLowerCase() < b.name.toLowerCase()) {
     return -1;
