@@ -5,6 +5,7 @@ import { nestedFolderVariants, iconVariants } from "../lib/variants";
 import { getCenterBox } from "../lib/utils";
 
 const NestedFolder = ({ name, icons }) => {
+  const visibleIcons = icons.slice(3, 7);
   const elRef = useRef();
   const { folderOpenName } = useAppStateContext();
   const dispatch = useAppDispatchContext();
@@ -15,7 +16,6 @@ const NestedFolder = ({ name, icons }) => {
       payload: { icons, name, ...getCenterBox(elRef.current) },
     });
   };
-  let filtered = icons.filter((_, index) => index >= 3 && index < 3 + 4);
 
   return (
     <motion.div
@@ -24,7 +24,7 @@ const NestedFolder = ({ name, icons }) => {
       variants={nestedFolderVariants}
     >
       <div className="grid grid-cols-2 p-2 cursor-pointer" onClick={openFolder}>
-        {filtered.map((icon, index) => (
+        {visibleIcons.map((icon, index) => (
           <motion.img
             animate={folderOpenName === name ? "open" : "close"}
             variants={iconVariants[index]}
