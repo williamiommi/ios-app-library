@@ -138,7 +138,7 @@ const folders = [
     icons: [
       { src: "/icons/Entertainment/remote.png", name: "Remote" },
       { src: "/icons/Entertainment/video.png", name: "Video" },
-      { src: "/icons/Entertainment/wifi.png", name: "Wifi" },
+      { src: "/icons/Entertainment/airport.png", name: "AirPort" },
     ],
   },
 ];
