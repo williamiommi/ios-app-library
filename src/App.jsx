@@ -10,12 +10,12 @@ import FolderDetail from "./components/FolderDetail";
 import FolderList from "./components/FolderList";
 
 function App() {
-  const { pro, folderOpenName } = useAppStateContext();
+  const { folderOpenName } = useAppStateContext();
 
   return (
     <>
       <div className="grid gap-10 place-items-center my-5">
-        <PhoneFrame pro={pro}>
+        <PhoneFrame>
           <BackdropLayer />
           <TopBar />
           <motion.div
