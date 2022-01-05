@@ -1,4 +1,5 @@
 import useFolderListEntryChar from "../hooks/useFolderListEntryChar";
+import Icon from "./Icon";
 
 const FolderListEntry = ({ char, apps }) => {
   const { titleRef } = useFolderListEntryChar();
@@ -15,14 +16,16 @@ const FolderListEntry = ({ char, apps }) => {
       )}
       <ul className="text-white text-sm font-bold z-10">
         {apps.map((app) => (
-          <li
-            key={app.name}
-            className="flex items-center -ml-[5px] px-5 cursor-pointer"
-          >
-            <img src={app.src} alt={app.name} className="w-14" />
-            <span className="flex w-[80%] self-stretch items-center border-b border-b-white/10 mb-1 py-5 mx-2">
-              <span>{app.name}</span>
-            </span>
+          <li>
+            <Icon
+              key={app.name}
+              showText
+              src={app.src}
+              text={app.name}
+              wrapperClass="flex items-center justify-start -ml-[5px] px-5 cursor-pointer h-16"
+              imgClass="w-14"
+              textClass="flex w-[80%] items-center self-stretch border-b border-b-white/10 mx-2"
+            />
           </li>
         ))}
       </ul>
