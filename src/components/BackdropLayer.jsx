@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const BackdropLayer = ({ level, children }) => {
+const BackdropLayer = ({ level }) => {
   let backdropLevel = "backdrop-blur-md";
   switch (level) {
     case "md":
@@ -16,9 +16,7 @@ const BackdropLayer = ({ level, children }) => {
       break;
   }
   return (
-    <div className={`absolute inset-0 bg-black/20 ${backdropLevel}`}>
-      {children}
-    </div>
+    <div className={`absolute inset-0 bg-black/20 ${backdropLevel}`} />
   );
 };
 

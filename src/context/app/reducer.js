@@ -2,7 +2,7 @@ import { getCenterPointsDifference } from "../../lib/utils";
 
 export default function AppReducer(state, action) {
   switch (action.type) {
-    case "SET.CENTER.COORDS": {
+    case "SET.PHONE.FRAME.CENTER.COORDS": {
       return { ...state, centerCoords: action.payload };
     }
     case "SET.FOLDER.NAME": {
@@ -23,7 +23,7 @@ export default function AppReducer(state, action) {
     case "TOGGLE.FOLDER.LIST": {
       return { ...state, isFolderListOpen: !state.isFolderListOpen };
     }
-    case "FILTER.APPS": {
+    case "SET.FILTER.APPS": {
       let filteredApps = null;
       if (action.payload)
         filteredApps = state.apps.filter((app) =>

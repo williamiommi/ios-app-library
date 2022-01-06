@@ -8,7 +8,7 @@ const PhoneFrame = ({ children }) => {
   useEffect(() => {
     if (phoneFrameRef.current) {
       dispatch({
-        type: "SET.CENTER.COORDS",
+        type: "SET.PHONE.FRAME.CENTER.COORDS",
         payload: getCenterBox(phoneFrameRef.current),
       });
     }

@@ -28,7 +28,7 @@ const InputSearch = () => {
   };
 
   useEffect(() => {
-    dispatch({ type: "FILTER.APPS", payload: debouncedSearchTerm });
+    dispatch({ type: "SET.FILTER.APPS", payload: debouncedSearchTerm });
   }, [dispatch, debouncedSearchTerm]);
 
   return (

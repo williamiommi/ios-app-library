@@ -1,7 +1,6 @@
 import data from "../../mock";
 
 const state = {
-  pro: true,
   alphabet: data.alphabet,
   folders: data.folders,
   apps: data.apps,
