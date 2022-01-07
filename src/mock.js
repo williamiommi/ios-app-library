@@ -1,5 +1,3 @@
-import { calculateAppsDict, sortApps } from "./lib/utils";
-
 const alphabet = [
   "A",
   "B",
@@ -142,18 +140,96 @@ const folders = [
     ],
   },
 ];
-
-let apps = [];
-folders.reduce((acc, folder) => {
-  folder.icons.forEach((icon) => {
-    if (!acc[icon.name.toLowerCase()]) apps.push(icon);
-    acc[icon.name.toLowerCase()] = icon;
-  });
-  return acc;
-}, {});
-
-apps = apps.sort(sortApps);
-const appsDict = calculateAppsDict(apps);
+const apps = [
+  { src: "/icons/Entertainment/airport.png", name: "AirPort" },
+  { src: "/icons/Social/mail.png", name: "App Store" },
+  { src: "/icons/RecentlyAdded/apple-store.png", name: "Apple Store" },
+  { src: "/icons/Sport/books.png", name: "Books" },
+  { src: "/icons/Games/calculator.png", name: "Calculator" },
+  { src: "/icons/RecentlyAdded/calendar.png", name: "Calendar" },
+  { src: "/icons/RecentlyAdded/camera.png", name: "Camera" },
+  { src: "/icons/RecentlyAdded/clips.png", name: "Clips" },
+  { src: "/icons/RecentlyAdded/clock.png", name: "Clock" },
+  { src: "/icons/Games/compass.png", name: "Compass" },
+  { src: "/icons/RecentlyAdded/contacts.png", name: "Contacts" },
+  { src: "/icons/RecentlyAdded/facetime.png", name: "FaceTime" },
+  { src: "/icons/RecentlyAdded/files.png", name: "Files" },
+  { src: "/icons/Sport/find-my.png", name: "Find My" },
+  { src: "/icons/RecentlyAdded/health.png", name: "Health" },
+  { src: "/icons/RecentlyAdded/home.png", name: "Home" },
+  { src: "/icons/Sport/idea.png", name: "Idea" },
+  { src: "/icons/Utilities/imovie.png", name: "iMovie" },
+  { src: "/icons/RecentlyAdded/keynote.png", name: "Keynote" },
+  { src: "/icons/Utilities/measure.png", name: "Measure" },
+  { src: "/icons/Utilities/music.png", name: "Music" },
+  { src: "/icons/Utilities/numbers.png", name: "Numbers" },
+  { src: "/icons/Other/pages.png", name: "Pages" },
+  { src: "/icons/Other/phone.png", name: "Phone" },
+  { src: "/icons/Other/photos.png", name: "Photos" },
+  { src: "/icons/Suggestions/reminders.png", name: "Reminders" },
+  { src: "/icons/Entertainment/remote.png", name: "Remote" },
+  { src: "/icons/Suggestions/safari.png", name: "Safari" },
+  { src: "/icons/Games/settings.png", name: "Settings" },
+  { src: "/icons/Suggestions/stocks.png", name: "Stocks" },
+  { src: "/icons/Suggestions/tv.png", name: "TV" },
+  { src: "/icons/Entertainment/video.png", name: "Video" },
+  { src: "/icons/Suggestions/voice-memos.png", name: "Voice Memos" },
+];
+const appsDict = {
+  A: [
+    { src: "/icons/Entertainment/airport.png", name: "AirPort" },
+    { src: "/icons/Social/mail.png", name: "App Store" },
+    { src: "/icons/RecentlyAdded/apple-store.png", name: "Apple Store" },
+  ],
+  B: [{ src: "/icons/Sport/books.png", name: "Books" }],
+  C: [
+    { src: "/icons/Games/calculator.png", name: "Calculator" },
+    { src: "/icons/RecentlyAdded/calendar.png", name: "Calendar" },
+    { src: "/icons/RecentlyAdded/camera.png", name: "Camera" },
+    { src: "/icons/RecentlyAdded/clips.png", name: "Clips" },
+    { src: "/icons/RecentlyAdded/clock.png", name: "Clock" },
+    { src: "/icons/Games/compass.png", name: "Compass" },
+    { src: "/icons/RecentlyAdded/contacts.png", name: "Contacts" },
+  ],
+  F: [
+    { src: "/icons/RecentlyAdded/facetime.png", name: "FaceTime" },
+    { src: "/icons/RecentlyAdded/files.png", name: "Files" },
+    { src: "/icons/Sport/find-my.png", name: "Find My" },
+  ],
+  H: [
+    { src: "/icons/RecentlyAdded/health.png", name: "Health" },
+    { src: "/icons/RecentlyAdded/home.png", name: "Home" },
+  ],
+  I: [
+    { src: "/icons/Sport/idea.png", name: "Idea" },
+    { src: "/icons/Utilities/imovie.png", name: "iMovie" },
+  ],
+  K: [{ src: "/icons/RecentlyAdded/keynote.png", name: "Keynote" }],
+  M: [
+    { src: "/icons/Utilities/measure.png", name: "Measure" },
+    { src: "/icons/Utilities/music.png", name: "Music" },
+  ],
+  N: [{ src: "/icons/Utilities/numbers.png", name: "Numbers" }],
+  P: [
+    { src: "/icons/Other/pages.png", name: "Pages" },
+    { src: "/icons/Other/phone.png", name: "Phone" },
+    { src: "/icons/Other/photos.png", name: "Photos" },
+  ],
+  R: [
+    { src: "/icons/Suggestions/reminders.png", name: "Reminders" },
+    { src: "/icons/Entertainment/remote.png", name: "Remote" },
+  ],
+  S: [
+    { src: "/icons/Suggestions/safari.png", name: "Safari" },
+    { src: "/icons/Games/settings.png", name: "Settings" },
+    { src: "/icons/Suggestions/stocks.png", name: "Stocks" },
+  ],
+  T: [{ src: "/icons/Suggestions/tv.png", name: "TV" }],
+  V: [
+    { src: "/icons/Entertainment/video.png", name: "Video" },
+    { src: "/icons/Suggestions/voice-memos.png", name: "Voice Memos" },
+  ],
+};
 
 const data = { alphabet, apps, appsDict, folders };
 export default data;
