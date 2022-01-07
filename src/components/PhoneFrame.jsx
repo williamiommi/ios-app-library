@@ -6,12 +6,10 @@ const PhoneFrame = ({ children }) => {
   const phoneFrameRef = useRef();
   const dispatch = useAppDispatchContext();
   useEffect(() => {
-    if (phoneFrameRef.current) {
-      dispatch({
-        type: "SET.PHONE.FRAME.CENTER.COORDS",
-        payload: getCenterBox(phoneFrameRef.current),
-      });
-    }
+    dispatch({
+      type: "SET.PHONE.FRAME.CENTER.COORDS",
+      payload: getCenterBox(phoneFrameRef.current),
+    });
   }, [dispatch]);
   return (
     <div
