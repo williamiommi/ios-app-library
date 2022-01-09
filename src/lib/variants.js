@@ -1,4 +1,4 @@
-const distance = 10;
+const distance = 7;
 const closeIconVariant = {
   x: 0,
   y: 0,
