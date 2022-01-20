@@ -102,6 +102,7 @@ export const inputSearchWrapperVariants = {
   open: {
     left: "10px",
     x: 0,
+    width: '85%',
     transition: { ease: "linear", duration: 0.2 },
   },
 };

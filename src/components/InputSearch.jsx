@@ -9,11 +9,12 @@ import {
   inputSearchCancelVariants,
 } from "../lib/variants";
 import useDebounce from "../hooks/useDebounce";
+import Close from "./icons/Close";
 
 const InputSearch = () => {
   const inputRef = useRef();
   const [searchTerm, setSearchTerm] = useState("");
-  const debouncedSearchTerm = useDebounce(searchTerm);
+  const [debouncedSearchTerm, setDebouncedValue] = useDebounce(searchTerm);
   const { isFolderListOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
   const openFolderList = () => {
@@ -23,8 +24,13 @@ const InputSearch = () => {
     }
   };
   const closeFolderList = () => {
-    setSearchTerm('');
+    setSearchTerm("");
     dispatch({ type: "TOGGLE.FOLDER.LIST" });
+  };
+
+  const cleanInput = () => {
+    setDebouncedValue("");
+    setSearchTerm("");
   };
 
   useEffect(() => {
@@ -61,6 +67,11 @@ const InputSearch = () => {
               className={`text-white text-sm ml-1 placeholder:text-gray-500 bg-transparent outline-none`}
             />
           </motion.div>
+          {isFolderListOpen && debouncedSearchTerm && (
+            <button className="absolute right-3 w-4 h-4" onClick={cleanInput}>
+              <Close />
+            </button>
+          )}
         </motion.div>
         <motion.button
           type="button"
