@@ -16,9 +16,8 @@ const FolderListEntry = ({ char, apps }) => {
       )}
       <ul className="text-white text-sm font-bold z-10">
         {apps.map((app) => (
-          <li>
+          <li key={app.name}>
             <Icon
-              key={app.name}
               showText
               src={app.src}
               text={app.name}
