@@ -2,7 +2,6 @@ import { memo, useRef } from "react";
 import { motion } from "framer-motion";
 import { useAppDispatchContext, useAppStateContext } from "../context/app";
 import { nestedFolderVariants, iconVariants } from "../lib/variants";
-import { getCenterBox } from "../lib/utils";
 
 const NestedFolder = ({ name, icons }) => {
   const visibleIcons = icons.slice(3, 7);
@@ -13,7 +12,7 @@ const NestedFolder = ({ name, icons }) => {
     dispatch({ type: "SET.FOLDER.NAME", payload: name });
     dispatch({
       type: "SET.FOLDER",
-      payload: { icons, name, ...getCenterBox(elRef.current) },
+      payload: { icons, name, el: elRef.current },
     });
   };
 

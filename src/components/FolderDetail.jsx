@@ -4,27 +4,28 @@ import useFolderDetailBlur from "../hooks/useFolderDetailBlur";
 import { useEffect, useRef } from "react";
 import { useAppDispatchContext, useAppStateContext } from "../context/app";
 import { folderDetailVariants } from "../lib/variants";
+import { getDistanceFromCenterFrame } from "../lib/utils";
 
 const FolderDetail = () => {
   const folderRef = useRef();
   const controls = useAnimation();
-  const { distanceFromCenter, folderOpen } = useAppStateContext();
+  const { folderOpen } = useAppStateContext();
   const dispatch = useAppDispatchContext();
   const { blurredRef } = useFolderDetailBlur(folderOpen);
 
   useEffect(() => {
     if (folderOpen) {
-      controls.set(distanceFromCenter);
+      controls.set(getDistanceFromCenterFrame(folderOpen.el));
       controls.set(folderDetailVariants.close);
       controls.start(folderDetailVariants.open);
     }
-  }, [folderOpen, controls, distanceFromCenter]);
+  }, [folderOpen, controls]);
 
   const closeFolderHandler = async () => {
     dispatch({ type: "SET.FOLDER.NAME", payload: null });
     await controls.start({
       ...folderDetailVariants.close,
-      ...distanceFromCenter,
+      ...getDistanceFromCenterFrame(folderOpen.el),
     });
     dispatch({ type: "SET.FOLDER", payload: null });
   };

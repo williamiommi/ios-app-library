@@ -1,5 +1,3 @@
-import { getCenterPointsDifference } from "../../lib/utils";
-
 export default function AppReducer(state, action) {
   switch (action.type) {
     case "SET.PHONE.FRAME.CENTER.COORDS": {
@@ -12,12 +10,6 @@ export default function AppReducer(state, action) {
       return {
         ...state,
         folderOpen: action.payload,
-        distanceFromCenter: action.payload
-          ? getCenterPointsDifference(state.centerCoords, {
-              x: action.payload.x,
-              y: action.payload.y,
-            })
-          : null,
       };
     }
     case "TOGGLE.FOLDER.LIST": {
